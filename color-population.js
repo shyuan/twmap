@@ -49,7 +49,7 @@ var population_density_mouseover_cb = function(e){
   for (var i in data) {
     if ('' !== data[i]) {
       if('name'== i) {
-        body += '行政區: ' + data[i] + '<br>';
+        body += '<br>行政區: ' + data[i] + '<br>';
       } else if ('populationDensity'== i) {
         body += '人口密度: ' + data[i] + ' 人/平方公里<br>';
       }
