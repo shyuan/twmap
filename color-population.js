@@ -1,6 +1,6 @@
 var all_data = null;
 
-var bluegreen_init_data = function(data){
+var population_density_init_data = function(data){
     all_data = [];
     data.forEach(function(d){
         var id;
@@ -10,7 +10,7 @@ var bluegreen_init_data = function(data){
     console.log(all_data);
 };
 
-var bluegreen_style_cb = function(d) {
+var population_density_style_cb = function(d) {
     if ('undefined' == typeof(all_data[d.id])) {
         return '';
     }
@@ -37,7 +37,7 @@ var bluegreen_style_cb = function(d) {
     return 'fill:rgb(' + rgb.join(',') + ')';
 };
 
-var bluegreen_mouseover_cb = function(e){
+var population_density_mouseover_cb = function(e){
     var data = all_data[e.id];
     if ('undefined' == typeof(data)) {
         $('#info').text('不知道的鄉鎮: ' + e.id);
