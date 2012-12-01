@@ -38,15 +38,23 @@ var population_density_style_cb = function(d) {
 };
 
 var population_density_mouseover_cb = function(e){
-    var data = all_data[e.id];
-    if ('undefined' == typeof(data)) {
-        $('#info').text('不知道的鄉鎮: ' + e.id);
+  var data = all_data[e.id];
+
+  if ('undefined' == typeof(data)) {
+    $('#info').text('不知道的鄉鎮: ' + e.id);
+  }
+
+  var body = '';
+
+  for (var i in data) {
+    if ('' !== data[i]) {
+      if('name'== i) {
+        body += '行政區: ' + data[i] + '<br>';
+      } else if ('populationDensity'== i) {
+        body += '人口密度: ' + data[i] + ' 人/平方公里<br>';
+      }
     }
-    var body = '';
-    for (var i in data) {
-        if ('' !== data[i]) {
-            body += i + ': ' + data[i] + '<br>';
-        }
-    }
-    $('#info').html(body);
+  }
+
+  $('#info').html(body);
 };
