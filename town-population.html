@@ -16,6 +16,11 @@
   stroke-width: 1.5px;
 }
 
+.white{
+	fill: none;
+  pointer-events: all;
+}
+
 </style>
 </head>
 <body>
@@ -26,7 +31,7 @@
 <script src="color-population.js"></script>
 <div id="info" style="position: absolute; left: 600px; top: 0px"></div>
 <script><!--
-twmap('town.json', 'county.json', 'town-district.tsv', {
+twmap('town2.json', 'county2.json', 'town-district.tsv', {
     init_data: bluegreen_init_data,
     style_cb: bluegreen_style_cb,
     mouseover_cb: bluegreen_mouseover_cb
